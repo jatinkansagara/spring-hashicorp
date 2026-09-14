@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    vault:
+      host: 127.0.0.1
+      port: 8200
+      scheme: http
+      authentication: TOKEN
+      token: ${VAULT_TOKEN:hvs.testing-token}
+      transit:
+        enabled: true
+vault:
+  transit:
+    key-name: ${VAULT_TRANSIT_KEY_NAME:my-app-key1}
